@@ -1,0 +1,11 @@
+@import url(normalize.css);
+:root{
+  --primary-color:#ffb029;
+  --main-font-color:#333;
+  --main-font-size:14px;
+}
+
+html,body{
+  color: var(--main-font-color);
+  font-size: var(--main-font-size);
+}
