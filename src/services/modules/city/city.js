@@ -1,5 +1,5 @@
-import request from "../../request";
+import httpRequest from "../../request";
 
 export const getCities = () => {
-  return request.get({ url: "/city/all" });
+  return httpRequest.get({ url: "/city/all" });
 };

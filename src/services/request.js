@@ -6,6 +6,9 @@ class HttpRequest {
     this.instance = axios.create({
       baseURL,
       timeout,
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+      },
     });
   }
   request(config) {
