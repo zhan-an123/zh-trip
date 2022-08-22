@@ -15,27 +15,42 @@ const router = createRouter({
     {
       path: "/home",
       name: "home",
+      meta: {
+        hiddenBar: false,
+      },
       component: () => import("@/views/home/home.vue"),
     },
     {
       path: "/order",
       name: "order",
+      meta: {
+        hiddenBar: false,
+      },
       component: () => import("@/views/order/order.vue"),
     },
     {
       path: "/favor",
       name: "favor",
+      meta: {
+        hiddenBar: false,
+      },
       component: () => import("@/views/favor/favor.vue"),
     },
 
     {
       path: "/message",
       name: "message",
+      meta: {
+        hiddenBar: false,
+      },
       component: () => import("@/views/message/message.vue"),
     },
     {
       path: "/city",
       name: "city",
+      meta: {
+        hiddenBar: true,
+      },
       component: () => import("@/views/city/city.vue"),
     },
   ],
