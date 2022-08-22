@@ -1,23 +1,19 @@
 <script setup>
 import GroupCity from "./cpns/GroupCity.vue";
-import GroupCityOversea from "./cpns/GroupCityOversea.vue";
 
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { getCities } from "@/services/modules";
 
 const activeTitle = ref(null);
-const cityGroup = ref([]);
-const cityGroupOversea = ref([]);
+
+const allCities = ref(null);
 const keyword = ref("");
 
 const router = useRouter();
-onMounted(() => {
-  getCities().then((res) => {
-    // console.log(res, "===");
-    cityGroup.value = res.data.cityGroup;
-    cityGroupOversea.value = res.data.cityGroupOverSea;
-  });
+
+getCities().then((res) => {
+  allCities.value = res.data;
 });
 
 const onSearch = () => {};
@@ -45,8 +41,12 @@ const onClickTab = ({ name }) => {
       @click-tab="onClickTab"
       color="var(--primary-color)"
     >
-      <van-tab title="国内·港澳台" name="1"><group-city /></van-tab>
-      <van-tab title="海外" name="2">内容 2</van-tab><group-city-overSea />
+      <van-tab title="国内·港澳台" name="1"
+        ><group-city :cityGroup="allCities.cityGroup"
+      /></van-tab>
+      <van-tab title="海外" name="2"
+        ><group-city :cityGroup="allCities.cityGroupOverSea"
+      /></van-tab>
     </van-tabs>
   </div>
 </template>
