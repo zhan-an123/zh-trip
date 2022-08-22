@@ -5,20 +5,28 @@ const props = defineProps({
 });
 
 const indexList = computed(() => {
-  const list = props.cityGroup.cities.map((item) => item.group);
+  const list = props.cityGroup?.cities.map((item) => item.group);
+
   return list;
 });
 </script>
 <template>
   <div class="group-city">
     <div class="hot-city">
-      <div v-for="item in props.cityGroup.hotCities" :key="item.cityId">
+      <div
+        class="hot-item"
+        v-for="item in props.cityGroup?.hotCities"
+        :key="item.cityId"
+      >
         {{ item.cityName }}
       </div>
     </div>
-
-    <van-index-bar :index-list="indexList">
-      <template v-for="city in props.cityGroup.cities" :key="city.group">
+    <van-index-bar
+      :index-list="indexList"
+      :sticky="false"
+      highlight-color="var(--primary-color)"
+    >
+      <template v-for="city in props.cityGroup?.cities" :key="city.group">
         <van-index-anchor :index="city.group" />
         <van-cell
           v-for="item in city.cities"
@@ -29,4 +37,17 @@ const indexList = computed(() => {
     </van-index-bar>
   </div>
 </template>
-<style scoped></style>
+<style lang="less" scoped>
+.group-city {
+  .hot-city {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 6px;
+    .hot-item {
+      padding: 6px;
+      margin: 6px 6px 0 0;
+      background-color: #fff4ec;
+    }
+  }
+}
+</style>
