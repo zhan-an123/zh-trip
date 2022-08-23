@@ -44,6 +44,7 @@ const tabClick = (item) => {
   height: 50px;
   display: flex;
   justify-content: space-around;
+  background-color: #fff;
   .tab-item {
     display: flex;
     flex-direction: column;

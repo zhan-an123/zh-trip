@@ -42,10 +42,10 @@ const onClickTab = ({ name }) => {
       color="var(--primary-color)"
     >
       <van-tab title="国内·港澳台" name="1"
-        ><group-city :cityGroup="allCities.cityGroup"
+        ><group-city :cityGroup="allCities?.cityGroup"
       /></van-tab>
       <van-tab title="海外" name="2"
-        ><group-city :cityGroup="allCities.cityGroupOverSea"
+        ><group-city :cityGroup="allCities?.cityGroupOverSea"
       /></van-tab>
     </van-tabs>
   </div>

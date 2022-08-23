@@ -27,11 +27,7 @@ const getCurrentLocation = () => {
       <div @click="goToCity">广州</div>
       <div @click="getCurrentLocation">
         <span>我的位置</span>
-        <img
-          class="location-icon"
-          src="@/assets/img/home/location.png"
-          alt=""
-        />
+        <img class="location-icon" src="@/assets/img/home/location.png" alt="" />
       </div>
     </div>
 

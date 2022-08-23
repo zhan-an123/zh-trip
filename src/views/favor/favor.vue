@@ -2,4 +2,4 @@
 <template>
   <div class="favor"></div>
 </template>
-<style scoped></style>
+<style lang="less" scoped></style>
