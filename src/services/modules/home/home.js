@@ -1,19 +1,18 @@
 import httpRequest from "../../request";
 //获取热门建议
 export const getHotSuggests = () => {
-  return httpRequest({ url: "/home/hotSuggests", method: "get" });
+  return httpRequest.get({ url: "/home/hotSuggests" });
 };
 
 //获取分类
 export const getCategories = () => {
-  return httpRequest({ url: "/home/categories", method: "get" });
+  return httpRequest.get({ url: "/home/categories" });
 };
 
 //获取房屋列表
-export const getHouseList = (page) => {
-  return httpRequest({
+export const getHouseList = (page = 1) => {
+  return httpRequest.get({
     url: "/home/houselist",
-    method: "get",
     params: { page },
   });
 };

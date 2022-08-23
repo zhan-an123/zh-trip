@@ -19,7 +19,7 @@ class HttpRequest {
           resolve(res.data);
         })
         .catch((err) => {
-          reject();
+          reject(err);
         });
     });
   }

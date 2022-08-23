@@ -1,4 +1,7 @@
 <script setup>
+import CategoryList from "./cpns/CategoryList.vue";
+import HouseList from "./cpns/HouseList.vue";
+
 import { useRouter } from "vue-router";
 const router = useRouter();
 const goToCity = () => {
@@ -32,6 +35,12 @@ const getCurrentLocation = () => {
     </div>
 
     <div class="checkin-info"></div>
+
+    <!-- 推荐类别 -->
+    <CategoryList />
+
+    <!-- 房屋列表 -->
+    <HouseList />
   </div>
 </template>
 <style lang="less" scoped>
