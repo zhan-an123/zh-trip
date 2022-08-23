@@ -1,0 +1,11 @@
+@import url(./base.css);
+
+.flex-colunm-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tips-font{
+  font-size: 12px;
+  color:#ccc;
+}

@@ -4,7 +4,7 @@ import HouseItemV9 from "@/components/house-item/HouseItemV9.vue";
 
 import { ref } from "vue";
 
-import { getHouseList } from "@/services";
+import { getHouseList } from "@/services/modules";
 
 const houseList = ref([]);
 

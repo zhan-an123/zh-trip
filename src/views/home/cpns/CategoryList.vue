@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-import { getCategories } from "@/services";
+import { getCategories } from "@/services/modules";
 
 const categories = ref([]);
 
@@ -12,7 +12,7 @@ getCategories().then((res) => {
 <template>
   <div class="category-list">
     <div class="item" v-for="item in categories" :key="item.id">
-      <div class="item-img"><img :src="item.pictureUrl" alt="" /></div>
+      <img class="item-img" :src="item.pictureUrl" alt="" />
       <div class="item-title">{{ item.title }}</div>
     </div>
   </div>
@@ -20,11 +20,24 @@ getCategories().then((res) => {
 <style lang="less" scoped>
 .category-list {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-shrink: 0;
+    width: 72px;
+    .item-img {
+      width: 42px;
+    }
+    .item-title {
+      margin-top: 2px;
+    }
   }
 }
 </style>
