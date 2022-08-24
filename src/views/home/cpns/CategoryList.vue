@@ -21,6 +21,7 @@ getCategories().then((res) => {
 .category-list {
   display: flex;
   width: 100%;
+  margin-top: 18px;
 
   overflow-y: auto;
   &::-webkit-scrollbar {

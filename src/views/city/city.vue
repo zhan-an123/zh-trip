@@ -50,4 +50,7 @@ const onClickTab = ({ name }) => {
     </van-tabs>
   </div>
 </template>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.city {
+}
+</style>

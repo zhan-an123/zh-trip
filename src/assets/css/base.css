@@ -3,6 +3,9 @@
   --primary-color:#ffb029;
   --main-font-color:#333;
   --main-font-size:14px;
+  --border-radius-xs:6px;
+  --border-radius-sm:12px;
+  --van-button-small-font-size:var(--main-font-size) !important
 }
 
 html,body{

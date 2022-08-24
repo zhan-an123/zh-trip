@@ -42,11 +42,14 @@ const indexList = computed(() => {
   .hot-city {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 6px;
+    padding: 0 24px;
+    justify-content: space-between;
+    margin-right: -18px;
     .hot-item {
-      padding: 6px;
-      margin: 6px 6px 0 0;
+      padding: 6px 18px;
+      margin: 12px 18px 0 0;
       background-color: #fff4ec;
+      border-radius: var(--border-radius-sm);
     }
   }
 }

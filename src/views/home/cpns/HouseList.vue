@@ -14,15 +14,29 @@ getHouseList().then((res) => {
 </script>
 <template>
   <div class="house-list">
-    <template v-for="item in houseList" :key="item.houseId">
-      <HouseItemV3 v-if="item.discoveryContentType === 3" />
-      <HouseItemV9 v-if="item.discoveryContentType === 9" />
-    </template>
+    <div class="title">热门精选</div>
+    <div class="list">
+      <template v-for="item in houseList" :key="item.houseId">
+        <HouseItemV3 v-if="item.discoveryContentType === 3" :item="item.data" />
+        <HouseItemV9 v-if="item.discoveryContentType === 9" :item="item.data" />
+      </template>
+    </div>
   </div>
 </template>
 <style lang="less" scoped>
 .house-list {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 12px;
+  background-color: #f5f7f9;
+  .title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 </style>

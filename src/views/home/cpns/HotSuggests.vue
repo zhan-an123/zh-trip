@@ -28,7 +28,9 @@ getHotSuggests().then((res) => {
   flex-wrap: wrap;
   .item {
     padding: 6px;
-    margin-right: 4px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    border-radius: var(--border-radius-xs);
   }
 }
 </style>
