@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_URL, TIMEOUT } from "./config";
-import { useLoadingStore } from "@/store/loading";
+import { useLoadingStore } from "@/stores/loading";
 
 const loadingStore = useLoadingStore();
 
@@ -47,7 +47,7 @@ class HttpRequest {
 
   responseInterceptor(response) {
     loadingStore.loading = false;
-    return response.data;
+    return response;
   }
   handleError(error) {
     loadingStore.loading = false;

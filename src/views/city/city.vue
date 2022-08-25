@@ -52,5 +52,6 @@ const onClickTab = ({ name }) => {
 </template>
 <style lang="less" scoped>
 .city {
+  overflow-x: hidden;
 }
 </style>

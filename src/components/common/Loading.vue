@@ -16,10 +16,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  background-color: #fff;
-  opacity: 0.2;
+  align-items: center;
+  background-color: #000;
+  opacity: 0.6;
   .img {
+    width: 80px;
     animation: load 2s linear infinite;
   }
   .text {
@@ -29,11 +30,9 @@
 
   @keyframes load {
     0% {
-      filter: grayscale(10%);
       transform: rotate(0deg);
     }
     100% {
-      filter: grayscale(0%);
       transform: rotate(360deg);
     }
   }

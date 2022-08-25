@@ -2,7 +2,7 @@
 import Tabbar from "./components/tab-bar/Tabbar.vue";
 import Loading from "./components/common/Loading.vue";
 import { useRoute } from "vue-router";
-import { useLoadingStore } from "@/store/loading";
+import { useLoadingStore } from "@/stores/loading";
 
 const route = useRoute();
 const loadingStore = useLoadingStore();
