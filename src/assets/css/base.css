@@ -1,6 +1,7 @@
 @import url(normalize.css);
 :root{
   --primary-color:#ffb029;
+  --text-color:#FAAB0A;
   --main-font-color:#333;
   --main-font-size:14px;
   --border-radius-xs:6px;

@@ -4,7 +4,6 @@ import HotSuggests from "./cpns/HotSuggests.vue";
 import CategoryList from "./cpns/CategoryList.vue";
 import HouseList from "./cpns/HouseList.vue";
 
-import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -16,7 +15,12 @@ const getCurrentLocation = () => {
   const geo = navigator.geolocation;
   geo.getCurrentPosition(
     (position) => {
-      console.log(position);
+      //经度
+      const longitude = position.coords.longitude;
+      //纬度
+      const latitude = position.coords.latitude;
+      console.log("位置:经度", longitude);
+      console.log("位置:纬度", latitude);
     },
     (err) => {
       console.log(err);
@@ -37,11 +41,7 @@ const getCurrentLocation = () => {
         <div @click="goToCity">广州</div>
         <div @click="getCurrentLocation">
           <span>我的位置</span>
-          <img
-            class="location-icon"
-            src="@/assets/img/home/location.png"
-            alt=""
-          />
+          <img class="location-icon" src="@/assets/img/home/location.png" alt="" />
         </div>
       </div>
 

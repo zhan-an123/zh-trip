@@ -1,5 +1,8 @@
 import axios from "axios";
 import { BASE_URL, TIMEOUT } from "./config";
+import { useLoadingStore } from "@/store/loading";
+
+const loadingStore = useLoadingStore();
 
 class HttpRequest {
   constructor(baseURL, timeout) {
@@ -10,6 +13,14 @@ class HttpRequest {
         "Content-Type": "application/json;charset=UTF-8",
       },
     });
+    this.instance.interceptors.request.use(
+      this.requestInterceptor,
+      this.handleError
+    );
+    this.instance.interceptors.response.use(
+      this.responseInterceptor,
+      this.handleError
+    );
   }
   request(config) {
     return new Promise((resolve, reject) => {
@@ -28,6 +39,19 @@ class HttpRequest {
   }
   post(config) {
     return this.request(Object.assign(config, { method: "post" }));
+  }
+  requestInterceptor(config) {
+    loadingStore.loading = true;
+    return config;
+  }
+
+  responseInterceptor(response) {
+    loadingStore.loading = false;
+    return response.data;
+  }
+  handleError(error) {
+    loadingStore.loading = false;
+    return Promise.reject(error);
   }
 }
 
